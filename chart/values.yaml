@@ -1,0 +1,17 @@
+replicaCount: 1
+
+clientId: "okok"
+
+image:
+  repository: k8s-nodejs-api
+  pullPolicy: Never 
+  tag: "latest"
+
+app:
+  port: 5000
+
+env:
+- name: "PORT"
+  value: 5000
+- name: "CLIENT"
+  value: "{{ .Values.clientId }}"
